@@ -151,8 +151,8 @@ if 1:
 
             print("predict type = %d" % i)
             p_test = model.predict_generator(test_gen,
-                                             steps=np.ceil(float(len(test_images_df_new)) / float(batch_size)),
-                                             # steps=1000,
+                                             # steps=np.ceil(float(len(test_images_df_new)) / float(batch_size)),
+                                             steps=1000,
                                              workers=6)
             p_full_test.append(p_test)
 
