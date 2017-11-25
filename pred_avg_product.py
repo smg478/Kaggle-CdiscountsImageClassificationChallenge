@@ -102,7 +102,7 @@ cat2idx, idx2cat = make_category_tables()
 print("creating model...")
 model = create_model_vgg16()
 print("loading weights...")
-model.load_weights('weights/vgg16_0001_idx0_batch1280_zoom0_shift0_adam_31-1.3040-0.7692-0.7317.hdf5', by_name=True)
+model.load_weights('weights/vgg16_01.hdf5', by_name=True)
 
 
 test_datagen = ImageDataGenerator()
@@ -136,7 +136,7 @@ with tqdm(total=num_test_products) as pbar:
 
         test_product_score.append(avg_pred)
 
-        if(len(test_product_score) % 1500 == 0):
+        if(len(test_product_score) % 150000 == 0):
             print('number of products:{}'.format(len(test_product_score)))
             print('saving up to product_id:{}'.format(product_id))
             print('split:{}'.format(split))
@@ -158,4 +158,4 @@ with tqdm(total=num_test_products) as pbar:
         submission_df.iloc[c]["category_id"] = idx2cat[cat_idx]
         pbar.update()
 
-submission_df.to_csv("incep_res_idxZero_full_flip_Nadam_drop025_32-1.3625-0.7113-0.7036.csv.gz", compression="gzip", index=False)
+submission_df.to_csv("submit_avg_product_vgg16.csv.gz", compression="gzip", index=False)
