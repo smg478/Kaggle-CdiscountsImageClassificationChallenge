@@ -17,7 +17,7 @@ h5py
 
 ### Data preparation
 
-Follow [Human Analog's](https://www.kaggle.com/humananalog/keras-generator-for-reading-directly-from-bson) kernel for data preparation. Put all items in to input folder.
+Follow [Human Analog's](https://www.kaggle.com/humananalog/keras-generator-for-reading-directly-from-bson) kernel for data preparation. Place all items in to input folder.
 
 ### Train
 
@@ -26,6 +26,8 @@ Run python train_cdiscount.py to train the model.
 models_cdis.py contains all the model architecture definitions.
 
 ### Test and submit
+
+Place trained weights in to the 'weights' folder.
 
 Run python pred_avg_product.py to make average predictions of a product which contains 1-4 images.
 
