@@ -103,9 +103,6 @@ def create_model_vgg16():
         for layer in model.layers[10:]:
             layer.trainable = True
 
-    #model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.00001), metrics=["accuracy"])  ##1e4
-    #print('Model loaded.')
-
     for i, layer in enumerate(model.layers):
         print(i, layer.name)
 
@@ -142,9 +139,6 @@ def create_model_xception():
             layer.trainable = True
         for layer in model.layers[85:]:
             layer.trainable = True
-
-    #model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.001), metrics=["accuracy"])  ##1e4
-    #print('Model loaded.')
 
     for i, layer in enumerate(model.layers):
         print(i, layer.name)
@@ -189,11 +183,6 @@ def create_model_incep_res():
         for layer in model.layers[400:]:
             layer.trainable = True
 
-
-    #model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.000005), metrics=["accuracy"])  ##1e4
-    #model.compile(loss='categorical_crossentropy', optimizer = Nadam(), metrics=["accuracy"])
-    #print('Model loaded.')
-
     for i, layer in enumerate(model.layers):
         print(i, layer.name)
 
@@ -230,10 +219,6 @@ def create_model_res50():
             layer.trainable = False
         for layer in model.layers[152:]:
             layer.trainable = True
-
-    model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=1e-4), metrics=["accuracy"])  ##1e4
-    # model.compile(loss='categorical_crossentropy', optimizer = Nadam(), metrics=["accuracy"])
-    print('Model loaded.')
 
     for i, layer in enumerate(model.layers):
         print(i, layer.name)
@@ -280,7 +265,7 @@ def create_model_incepv3():
 
     return model
 
-
+# https://github.com/flyyufelix/cnn_finetune
 def create_model_res101(img_rows, img_cols, color_type=1, num_classes=None):
 
     def identity_block(input_tensor, kernel_size, filters, stage, block):
@@ -434,18 +419,10 @@ def create_model_res101(img_rows, img_cols, color_type=1, num_classes=None):
     for layer in model.layers[400:]:
         layer.trainable = True
 
-    # model.compile(loss='categorical_crossentropy', optimizer=Adam(lr=0.000005), metrics=["accuracy"])  ##1e4
-    # model.compile(loss='categorical_crossentropy', optimizer = Nadam(), metrics=["accuracy"])
-    # print('Model loaded.')
-
     for i, layer in enumerate(model.layers):
         print(i, layer.name)
 
     model.summary()
-
-    # Learning rate is changed to 0.001
-    #sgd = SGD(lr=1e-3, decay=1e-6, momentum=0.9, nesterov=True)
-    #model.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])
 
     return model
 
