@@ -1,16 +1,12 @@
 ## Cdiscount-2017
-This repository contains the keras solution files of the challange. 
+This repository contains the keras solution files of the challenge.
 
 ## Requirements
 
 Keras 2.0.8 w/ TF backend
-
 sklearn
-
 cv2
-
 tqdm
-
 h5py
 
 ## Usage
