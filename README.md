@@ -21,21 +21,20 @@ Follow [Human Analog's](https://www.kaggle.com/humananalog/keras-generator-for-r
 
 ### Train
 
-Run python train_cdiscount.py to train the model. 
+Run python train.py to train the model using pre-trained weights.
 
 models_cdis.py contains all the model architecture definitions.
 
 ### Test and submit
 
-Place trained weights in to the 'weights' folder.
+Place trained weights in to the 'weights' folder (assumed to be under base directory).
 
-Run python pred_avg_product.py to make average predictions of a product which contains 1-4 images.
+Run python submit.py to make average predictions of a product which contains 1-4 images.
 
-Run python ensemble_from_submission.py to make most common label ensemble from submission files.
+Run python ensemble.py to make most common label ensemble from submission files.
 
-Run python TTA_cdis.py to do test time augmentation and make pridictions. This script doesn't make average prediction of a product. Instead, this treats every image as an individual product. Then makes most common label prediction on a product. (If there are more than one same frequent label, then it takes the value which comes first) - not a perfect prediction strategy.
 
 ### Tools
 
-'tools' folder contains some useful codes for experiment and result analysis.
+'dev_files' folder contains some useful codes for experiment and result analysis.
 
