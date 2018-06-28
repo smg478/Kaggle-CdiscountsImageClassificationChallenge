@@ -2,7 +2,6 @@
 This repository contains the keras solution files of the challenge.
 
 ## Requirements
-
 Keras 2.0.8 w/ TF backend
 sklearn
 cv2
